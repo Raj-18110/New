@@ -1,0 +1,303 @@
+select dept_code,sum(staff_sal) from staff_master
+where staff_code not in (select mgr_code from staff_master)
+group by  dept_code
+having sum(staff_sal)>20000;
+
+
+
+1)
+
+select staff_name,d.dept_code,dept_name,staff_sal
+from staff_master s inner join department_master d on s.dept_code=d.dept_code
+where s.staff_sal >20000;
+
+
+
+
+---------------------------------------------------
+create table employee_master
+(employeeid number(10) not null,
+firstname varchar2(50) not null,
+lastname varchar2(50) npot null);
+
+
+alter table employee_master
+add mobileno number(20);
+
+
+----------------------------------------------------------------------------PayRoll--------------------------------------------------------------------------
+
+create table associate(
+associateid varchar(20) not null,
+yearlyinvestmentunder80c number(20) not null,
+firstname varchar(20) not null,
+lastname varchar(20) not null,
+department varchar(20) not null,
+designation varchar(10) not null,
+pancard varchar(10) not null,
+emailid varchar(20) not null);
+
+
+
+create table bankdetails
+(accountnumber number(20) not null,
+bankname varchar(20) not null,
+ifsccode varchar(20) not null)
+
+
+create table Salary
+(basicsalary number(10) not null,
+hra number(10) not null,
+conveyenceallowance number(10) not null,
+otherallowance number(10) not null,
+personalallowance number(10) not null,
+monthlytax number(10) not null,
+epf number(10) not null,
+companypf number(10) not null,
+gratuity number(10) not null,
+grosssalary number(10) not null,
+netsalary number(10) not null);
+
+
+
+-------------------------------------------------------------------------------------Banking-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ create table customer
+ (customerid number(10) not null,
+ firstname varchar(20) not null,
+ lastname varchar(20) not null,
+ mobileno number(10) not null,
+ emailid varchar(30) not null,
+ adharno number(20) not null,
+ pancardno varchar(20) not null,
+ dateofbirth date not null);
+
+
+create table address
+(city varchar(20) not null,
+state varchar(20) not null,
+pincode number(10) not null,
+country varchar(10) not null);
+
+
+create table account
+(accountno number(20) not null,
+accountbalance number(10) not null,
+accounttype varchar(10) not null);
+
+
+
+
+create table transaction
+(transactionid number(20) not null,
+timestamp VARCHAR2(30) not null,
+amount number(10) not null,
+transactiontype varchar(10) not null,
+transactionlocation varchar(10) not null,
+modeoftransaction varchar(10) not null,
+transactionstatus  varchar(10) not null);
+
+
+-----------------------------------mobilebilling------------------------------------------------------------------------
+create table plan
+(planid number(20) not null,
+monthlyrental number(20) not null,
+freelocalcalls number(20) not null,
+freelocalstdcalls number(20) not null,
+freelocalsms number(20) not null,
+freestdsms number(20) not null,
+freeinternetdatausageunits number(20) not null,
+localcallrate number(20) not null,
+stdcallrate number(20) not null,
+localsmsrate number(20) not null,
+stdsmsrate number(20) not null,
+internetdatausagerate number(20) not null);
+
+
+create table postpaidaccount
+(mobileno number(10) not null);
+
+-------------------------------------------------------------bankdetails-----------------------------------------------------------
+insert into bankdetails values(302201501230,'HDFC','HDFC0001324');
+
+insert into bankdetails values(302201501231,'HDFC','HDFC0001324');
+
+insert into bankdetails values(302201501232,'HDFC','HDFC0001324');
+
+insert into bankdetails values(302201501233,'KTKB','KTKB0001325');
+
+insert into bankdetails values(302201501234,'KTKB','KTKB0001325');
+
+insert into bankdetails values(302201501235,'KTKB','KTKB0001325');
+
+insert into bankdetails values(302201501236,'SCB','SCB00001326');
+
+insert into bankdetails values(302201501237,'SCB','SCB00001326');
+
+insert into bankdetails values(302201501238,'SCB','SCB00001326');
+
+insert into bankdetails values(302201501239,'ICICI','ICICI001327');
+
+-------------------------------------------------------------salary----------------------------------------------------------------
+INSERT INTO SALARY values(30000,2569,1909,1800,6509,300,900,709,2000,65009,83500);
+
+INSERT INTO SALARY values(30001,2568,1908,1801,6508,301,901,708,2001,65008,83501);
+
+INSERT INTO SALARY values(30002,2567,1907,1802,6507,302,707,902,2002,65007,83502);
+
+INSERT INTO SALARY values(30003,2566,1906,1803,6506,303,706,903,2003,65006,83503);
+
+INSERT INTO SALARY values(30004,2565,1905,1804,6505,304,705,904,2004,65005,83504);
+
+INSERT INTO SALARY values(30005,2564,1904,1805,6504,305,704,905,2005,65004,83505);
+
+INSERT INTO SALARY values(30006,2563,1903,1806,6503,306,703,906,2006,65003,83506);
+
+INSERT INTO SALARY values(30007,2562,1902,1807,6502,307,702,907,2007,65002,83507);
+
+INSERT INTO SALARY values(30008,2561,1901,1808,6501,308,701,908,2008,65001,83508);
+
+INSERT INTO SALARY values(30009,2560,1900,1809,6500,309,700,909,2009,65000,83509);
+
+
+
+
+----------------------------------------------------------Associate-------------------------------------------------------------
+insert into Associate
+	values('A101',2000,'Abhi','Kaush','ECE','Con','ADGFD0213L','ak101@gmail.com');
+insert into Associate
+	values('B101',2000,'Sesh','Sai','CSE','Sr.Con','SGHAS1356P','ss102@gmail.com');
+insert into Associate
+	values('C101',2000,'Raghav','Venkat','EEE','Asst.Con','LKAHG0251I','rv103@gmail.com');
+insert into Associate
+	values('D101',2000,'Sam','Laksh','PIE','Manager','YHGUI4523K','sl104@gmail.com');
+insert into Associate
+	values('E101',2000,'Krish','Ram','MME','Asst.Manager','RTYWF0154D','kr105@gmail.com');
+insert into Associate
+	values('F101',2000,'Sraavs','Maddy','EIE','Sr.Manager','OPDFS4502G','sm106@gmail.com');
+insert into Associate
+	values('G101',2000,'Hari','Priya','FAB','Clerk','AFHGY0164T','hp107@gmail.com');
+insert into Associate
+	values('H101',2000,'Goku','Kakarrot','CIVIL','Dean','RTAOS0780B','gk108@gmail.com');
+insert into Associate
+	values('I101',2000,'Vegeta','Saiyan','ME','Asst.Dean','PHIOS4589A','vs109@gmail.com');
+insert into Associate
+	values('I101',2000,'Ash','Ketchum','FD','P.Master','SCFDR0549P','ak110@gmail.com');
+
+-----------------------------------------------------------customer details-------------------------------------------------
+insert into customer values(1,'subhash','g',9553306410,'subhash@capgemini.com',307730456548,'ABCDE1234F',TO_DATE('1997/08/30', 'yyyy/mm/dd'));
+
+insert into customer values(2,'raj','k',9553306411,'raj@capgemini.com',307730456549,'ABCDE1235F',TO_DATE('1997/07/30', 'yyyy/mm/dd'));
+
+insert into customer values(3,'anand','b',9553346410,'anand@capgemini.com',307730456448,'ABCDE1244F',TO_DATE('1997/10/30', 'yyyy/mm/dd'));
+
+insert into customer values(4,'mahesh','p',9553309410,'mahesh@capgemini.com',307330456548,'ABCDG1234F',TO_DATE('1995/08/30', 'yyyy/mm/dd'));
+
+insert into customer values(5,'kaushal','army',9753306410,'kaushal@capgemini.com',317730456548,'ATCDE1234F',TO_DATE('1997/08/30', 'yyyy/mm/dd'));
+
+insert into customer values(6,'nutan','navy',9153306410,'nutan@capgemini.com',327730456548,'AZCDE1234F',TO_DATE('1994/08/10', 'yyyy/mm/dd'));
+
+insert into customer values(7,'amit','air',9253306410,'amit@capgemini.com',337730456548,'ASCDE1234F',TO_DATE('1993/05/20', 'yyyy/mm/dd'));
+
+insert into customer values(8,'roll','rida',9353306410,'roll@capgemini.com',347730456548,'AJCDE1234F',TO_DATE('1993/11/20', 'yyyy/mm/dd'));
+
+insert into customer values(9,'geetha','bang',9453306410,'geetha@capgemini.com',357730456548,'AVCDE1234F',TO_DATE('1996/07/20', 'yyyy/mm/dd'));
+
+insert into customer values(10,'chill','hill',9953306410,'chill@capgemini.com',367730456548,'AMCDE1234F',TO_DATE('1997/03/11', 'yyyy/mm/dd'));
+
+
+
+-----------------------------------------------------------address------------------------------------------------------------------------
+
+insert into address values('Guntur','andhrapradesh',522006,'India');
+insert into address values('Guntakal','andhrapradesh',522021,'India');
+insert into address values('ponnur','andhrapradesh',522035,'India');
+insert into address values('vizag','andhrapradesh',522001,'India');
+insert into address values('bhimavaram','andhrapradesh',522007,'India');
+insert into address values('nellore','andhrapradesh',522100,'India');
+insert into address values('piduguralla','andhrapradesh',522106,'India');
+insert into address values('macharla','andhrapradesh',522796,'India');
+insert into address values('Hyderabad','andhrapradesh',522156,'India');
+insert into address values('amaravathi','andhrapradesh',522906,'India');
+
+
+
+----------------------------------------------------------------account------------------------------------------------------------------
+insert into account values(302201501230,500,'Savings');
+
+insert into account values(302201501231,3330,'Current');
+
+insert into account values(302201501232,690,'Savings');
+
+insert into account values(302201501233,10,'Savings');
+
+insert into account values(302201501234,6009,'Current');
+
+insert into account values(302201501235,10000,'Savings');
+
+insert into account values(302201501236,39996,'Current');
+
+insert into account values(302201501237,46339,'Savings');
+
+insert into account values(302201501238,1600,'Savings');
+
+insert into account values(302201501239,12000,'Current');
+
+
+-----------------------------------------------------postpaidaccount-------------------------------------------------------------------
+insert into postpaidaccount values(9553306407);
+
+insert into postpaidaccount values(9553306433);
+
+insert into postpaidaccount values(9553306443);
+
+insert into postpaidaccount values(9553306434);
+
+insert into postpaidaccount values(9553306400);
+
+insert into postpaidaccount values(9553306409);
+
+insert into postpaidaccount values(9553306404);
+
+insert into postpaidaccount values(9553306401);
+
+
+----------------------------------------------Plan--------------------------------------------------------------------------
+insert into plan values(101,150,50,50,10,10,150,0.15,0.50,1,2,0.60);
+insert into plan values(102,200,50,50,20,10,150,0.15,0.50,1,2,0.60);
+insert into plan values(103,250,100,50,20,20,150,0.15,0.45,1,2,0.60);
+insert into plan values(104,300,100,100,25,20,250,0.1,0.45,1,2,0.60);
+insert into plan values(105,350,100,100,30,25,250,0.1,0.45,1,2,0.60);
+insert into plan values(106,400,150,100,30,30,250,0.1,0.40,1,2,0.60);
+insert into plan values(107,450,150,150,35,30,350,0.05,0.40,1,2,0.60);
+insert into plan values(108,500,200,150,35,35,350,0.05,0.35,1,2,0.60);
+insert into plan values(109,550,200,200,40,35,500,0.05,0.35,1,2,0.60);
+insert into plan values(110,600,250,200,40,40,500,0.05,0.30,1,2,0.60);
+
+
+
+insert into postpaidaccount values(9553306403);
+
+insert into postpaidaccount values(9553306402);
+
+
+
+
+insert into transaction values(789456123012,'2018/09/12 9:23:46',10000,'CARD','PUNE','IMPS','APPROVED');
+insert into transaction values(897456123023,'2018/09/1 4:3:46',45000,'UPI','MUMBAI','ONLINE BANKING','PENDING');
+insert into transaction values(986541237812,'2018/09/2 9:23:46',12000,'DEPOSIT','CHENNAI','RTGS','APPROVED');
+insert into transaction values(456789445666,'2018/08/2 9:03:46',52000,'POS','PUNE','IMPS','PENDING');
+insert into transaction values(456789445566,'2018/07/12 9:23:46',16000,'CARD','CHENNAI','IMPS','APPROVED');
+insert into transaction values(456789445126,'2018/09/12 9:23:46',51000,'WITHDRAWL','MUMBAI','RTGS','PENDING');
+insert into transaction values(456789445786,'2018/09/12 9:23:06',40000,'UPI','PUNE','RTGS','APPROVED');
+insert into transaction values(456789444566,'2018/09/12 19:23:46',40000,'POS','MUMBAI','RTGS','PENDING');
+insert into transaction values(456789445894,'2018/09/02 9:23:46',10120,'CARD','MUMBAI','IMPS','APPROVED');
+insert into transaction values(456789444566,'2018/09/12 07:23:46',40000,'POS','MUMBAI','RTGS','PENDING');
+
+
+
+
+
+
+
+
+

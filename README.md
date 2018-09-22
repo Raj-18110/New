@@ -1,1 +1,1 @@
-# New
+Details of training in capgemini
