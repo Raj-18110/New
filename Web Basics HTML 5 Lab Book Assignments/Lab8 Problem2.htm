@@ -13,32 +13,32 @@ table{background-color:skyblue}
  <table align="center">
   <tr>
    <td>Name:<sup style="color:red">*<sup></td>
-   <td><input type="text" pattern="[A-Za-z]+" maxlength="15" title="Accept only characters"></td>
+   <td><input type="text" pattern="[A-Za-z]+" maxlength="15" title="Accept only characters" required></td>
   </tr>
   <tr>
    <td>Password:<sup style="color:red">*<sup></td>
-   <td><input type="password"></td>
+   <td><input type="password" required></td>
   </tr>
   <tr>
    <td>Phone number:<sup style="color:red">*<sup></td>
-   <td><input type="text" pattern="[0-9]+" maxlength="10" title="Accepts digits"></td>
+   <td><input type="text" pattern="[0-9]+" maxlength="10" title="Accepts digits" required></td>
   </tr>
   <tr>
    <td>Gender:<sup style="color:red">*<sup></td>
-   <td><input type="radio" name="Gender">Male<input type="radio" name="Gender">Female</td>
+   <td><input type="radio" name="Gender">Male<input type="radio" name="Gender" required>Female</td>
   </tr>
   <tr>
    <td>Date of Birth:<sup style="color:red">*<sup></td>
-   <td><input type="text" value="mm/dd/yyyy"></td>
+   <td><input type="text" value="mm/dd/yyyy" required></td>
   </tr>
   <tr>
    <td>Email:<sup style="color:red">*<sup></td>
-   <td><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></td>
+   <td><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></td>
   </tr>
   <tr>
    <td>Highest Qualification:<sup style="color:red">*<sup></td>
    <td>
-    <select>
+    <select required>
 	<option value="" disabled selected hidden>Select Highest Qualification</option>
 	 <option>B.Tech</option>
 	 <option>M.Tech</option>
@@ -52,7 +52,7 @@ table{background-color:skyblue}
   <tr>
    <td>Courses Interested in:<sup style="color:red">*<sup></td>
    <td>
-    <input type="checkbox">Java
+        <input type="checkbox" >Java
 	<input type="checkbox">HTML 5
 	<input type="checkbox">CSS 3
 	<input type="checkbox">Angular JS
@@ -65,12 +65,12 @@ table{background-color:skyblue}
   </tr>
   <tr>
    <td>Upload Degree/External Certificates<sup style="color:red">*<sup></td>
-   <td><input type="file"></td>
+   <td><input type="file" required></td>
   </tr>
   <tr>
   <td></td>
   <td>
-   <input type="button" value="Submit Information">
+   <input type="submit" value="Submit Information">
    <input type="reset" value="Clear">
   </td>
   </tr>
