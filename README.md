@@ -1,1 +1,1 @@
-ALl check source -----------CG Trng--------------
+All check source -----------CG Trng--------------
