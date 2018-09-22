@@ -1,1 +1,1 @@
-Details of training in capgemini
+ALl check source -----------CG Trng--------------
