@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssociateData xmlns="http://www.example.org/Associate_Data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/Associate_Data Associate_Data.xsd ">
+  <Associate associateId="0">
+    <firstName>firstName</firstName>
+    <lastName>lastName</lastName>
+    <yearlyInvestmentUnder80C/>
+    <department>department</department>
+    <designation>Sr.Con</designation>
+    <pancard>pancard</pancard>
+    <emailid>emailid</emailid>
+    <BankDetails>
+      <accountNumber>accountNumber</accountNumber>
+      <bankName>bankName</bankName>
+      <ifscCode>ifscCode</ifscCode>
+    </BankDetails>
+  </Associate>
+</AssociateData>

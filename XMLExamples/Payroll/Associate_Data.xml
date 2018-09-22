@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssociateData>
+	<Associate associateId="A101">
+		<firstName>Abhi</firstName>
+		<lastName>Kaush</lastName>
+		<yearlyInvestmentUnder80C>2000</yearlyInvestmentUnder80C>
+		<department>ECE</department>
+		<designation>Con</designation>
+		<pancard>ADGFD0123L</pancard>
+		<emailId>ak101@gmail.com</emailId>
+		<BankDetails>
+			<accountNumber>1478562315</accountNumber>
+			<bankName>HDFC</bankName>
+			<ifscCode>HDFC123054</ifscCode>
+		</BankDetails>
+	</Associate>
+</AssociateData>

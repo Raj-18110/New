@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.example.org/Associate_Data"  xmlns:tns="http://www.example.org/Associate_Data" elementFormDefault="qualified">
+<element name="AssociateData">
+	<complexType>
+		<sequence>
+			<element name="Associate" minOccurs="1" maxOccurs="unbounded">
+				<complexType>
+					<sequence>
+						<element name="firstName" type="string"/>
+						<element name="lastName" type="string"/>
+						<element name="yearlyInvestmentUnder80C" >
+							<simpletype>
+								<restriction base="int">
+								<minInclusive value="0"/>
+								</restriction>
+							</simpletype>
+						</element>
+						<element name="department" type="string"/>
+						<element name="designation" >
+							<simpleType>
+								<restriction base="string">
+								<enumeration value="Sr.Con"/>
+								<enumeration value="Con"/>
+								<enumeration value="A.Con"/>
+								</restriction>
+							</simpleType>
+							</element>
+							<element name="pancard" type="string"/>
+							<element name="emailid" type="string"/>
+							<element name="BankDetails">
+								<complexType>
+									<sequence>
+										<element name="accountNumber" type="string"/>
+										<element name="bankName" type="string"/>
+										<element name="ifscCode" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+					</sequence>
+					<attribute name="associateId" type="int" use="required"/>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+</element>
+</schema>
