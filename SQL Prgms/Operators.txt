@@ -1,0 +1,17 @@
+'AND' Operator
+
+T	and		T	=	T
+T	and		F	=	F
+F	and		T	=	F
+F	and		F	=	F
+
+
+'OR' Operator
+
+
+
+
+
+
+select * from Associate 
+					where firstName='Satish' OR firstName='Rakesh' OR 'firstName='Nilesh';

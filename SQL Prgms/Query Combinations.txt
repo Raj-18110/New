@@ -1,0 +1,24 @@
+select * from BankDetails;
+
+select emailId from Associate;
+
+select * from Associate
+		where AssociateID='A101';
+
+select * from Salary
+		where grossSalary between 3000 and 50000;
+
+select * from BankDetails
+		where  bankName like '%_BI%';
+
+select basicSalary from Salary
+		where conveyenceAllowance!=3513;
+
+select * from Salary
+		where hra not between 3000 and 5000;
+
+select emailId || '-' || department as deptemail from Associate
+						where firstName like '%_a_%' or lastName like '%_a_%';
+
+select transactionId from Transaction 
+			where transactionStatus IN('UNSUCCESSFUL','CANCELLED');
